@@ -3,10 +3,11 @@ import { StyleSheet, View } from 'react-native';
 import { Input, Icon, Button } from 'react-native-elements';
 import { validateEmail } from '../../utils/Validation';
 import * as firebase from 'firebase';
+import { withNavigation } from 'react-navigation';
 import Loading from "../Loading";
 
-export default function RegisterForm(props) {
-    const {toastRef} = props;
+function RegisterForm(props) {
+    const {toastRef, navigation} = props;
     const [hidePassword, setHidePassword] = useState(true);
     const [hideRepeatPassword, setHideRepeatPassword] = useState(true);
     const [isVisibleLoading, setIsVisibledLoading] = useState(false);
@@ -30,7 +31,7 @@ export default function RegisterForm(props) {
                     .auth()
                     .createUserWithEmailAndPassword(email, password)
                     .then(() => {
-                        toastRef.current.show('Usuario creado correctamente');
+                        navigation.navigate("Account");
                     })
                     .catch(() => {
                         toastRef.current.show('Usuario no creado');
@@ -94,10 +95,12 @@ export default function RegisterForm(props) {
             buttonStyle={styles.btnRegister}
             onPress={register}
             />
-            <Loading title='Creando Cuenta' isVisible={isVisibleLoading} />
+            <Loading text='Creando Cuenta' isVisible={isVisibleLoading} />
         </View>
     )
 }
+
+export default withNavigation(RegisterForm);
 
 const styles = StyleSheet.create({
     formContainer: {
