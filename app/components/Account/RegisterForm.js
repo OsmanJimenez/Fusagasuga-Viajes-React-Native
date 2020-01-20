@@ -35,7 +35,7 @@ function RegisterForm(props) {
                     })
                     .catch(() => {
                         toastRef.current.show('Usuario no creado');
-                    })
+                         })
                 }
             }
         }
