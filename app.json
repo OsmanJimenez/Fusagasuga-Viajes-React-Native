@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "fusagasuga-travel",
-    "slug": "fusagasuga-travel",
+    "name": "Fusagasuga Viajes",
+    "slug": "fusagasuga-viajes",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
+    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android",
@@ -15,7 +15,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#00a680"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,8 +24,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.osmanjimenez.fusagasugaviajes",
+      "supportsTablet": false
     },
-    "description": "Proyecto de desarrollo de aplicativo movil"
+    "android": {
+      "package": "com.osmanjimenez.fusagasugaviajes",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION", 
+        "ACCESS_FINE_LOCATION",
+        "CAMERA_ROLL",
+        "CAMERA",        
+        "LOCATION",
+        "READ_EXTERNAL_STORAGE", 
+        "WRITE_EXTERNAL_STORAGE"
+
+      ]
+    },
+    "description": ""
   }
 }

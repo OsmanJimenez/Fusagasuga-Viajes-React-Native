@@ -1,13 +1,13 @@
-import { createStackNavigator} from 'react-navigation-stack';
-import TopSitesScreen from '../screens/TopSites';
+import { createStackNavigator } from "react-navigation-stack";
+import TopRestaurantsScreen from "../screens/TopRestaurants";
 
-const TopListStacks = createStackNavigator({
-    TopRestaurants: {
-        screen: TopSitesScreen,
-        navigationOptions: () => ({
-            title: "Los mejores sitios"
-        })
-    }
-})
+const TopListScreenStacks = createStackNavigator({
+  TopRestaurants: {
+    screen: TopRestaurantsScreen,
+    navigationOptions: () => ({
+      title: "Los mejores lugares"
+    })
+  }
+});
 
-export default TopListStacks;
+export default TopListScreenStacks;
